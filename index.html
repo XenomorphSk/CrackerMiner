@@ -3,41 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CrackerMiner</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <title>CrackerMiner Dashboard</title>
+    <style>
+        /* Adicione o seu estilo aqui */
+    </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>CrackerMiner</h1>
-            <nav>
-                <a href="#dashboard">Dashboard</a>
-                <a href="#ranking">Ranking</a>
-                <a href="#account">Minha Conta</a>
-            </nav>
-        </header>
-        <section id="dashboard">
-            <h2>Dashboard</h2>
-            <div id="stats">
-                <p><strong>Moedas em circulação:</strong> <span id="total-coins">Carregando...</span></p>
-                <p><strong>Mineradores ativos:</strong> <span id="miners-active">Carregando...</span></p>
-                <p><strong>Velocidade total da rede:</strong> <span id="total-speed">Carregando...</span></p>
-            </div>
-        </section>
-        <section id="ranking">
-            <h2>Ranking</h2>
-            <ul id="ranking-list">Carregando...</ul>
-        </section>
-        <section id="account">
-            <h2>Minha Conta</h2>
-            <form id="account-form">
-                <input type="text" id="public-key" placeholder="Sua chave pública">
-                <button type="submit">Consultar</button>
-            </form>
-            <p><strong>Seu saldo:</strong> <span id="account-balance">-</span></p>
-        </section>
-    </div>
-    <script src="script.js"></script>
+    <h1>CrackerMiner Dashboard</h1>
+
+    <h2>Total de Moedas: <span id="total-coins">Carregando...</span></h2>
+    <h2>Ranking dos Mineradores</h2>
+    <ul id="ranking">
+        <li>Carregando...</li>
+    </ul>
+
+    <script>
+        // Função para pegar o total de moedas
+        async function getTotalCoins() {
+            const response = await fetch('http://127.0.0.1:5000/api/total_coins');
+            const data = await response.json();
+            document.getElementById('total-coins').innerText = data.total_coins;
+        }
+
+        // Função para pegar o ranking dos mineradores
+        async function getRanking() {
+            const response = await fetch('http://127.0.0.1:5000/api/ranking');
+            const data = await response.json();
+            const rankingElement = document.getElementById('ranking');
+            rankingElement.innerHTML = ''; // Limpar a lista atual
+
+            data.forEach((miner) => {
+                const listItem = document.createElement('li');
+                listItem.innerText = `${miner.username}: ${miner.amount} moedas`;
+                rankingElement.appendChild(listItem);
+            });
+        }
+
+        // Carregar dados ao inicializar a página
+        window.onload = () => {
+            getTotalCoins();
+            getRanking();
+        };
+    </script>
 </body>
 </html>
