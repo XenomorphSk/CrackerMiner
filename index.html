@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrackerMiner</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CrackerMiner</h1>
+            <nav>
+                <a href="#dashboard">Dashboard</a>
+                <a href="#ranking">Ranking</a>
+                <a href="#account">Minha Conta</a>
+            </nav>
+        </header>
+        <section id="dashboard">
+            <h2>Dashboard</h2>
+            <div id="stats">
+                <p><strong>Moedas em circulação:</strong> <span id="total-coins">Carregando...</span></p>
+                <p><strong>Mineradores ativos:</strong> <span id="miners-active">Carregando...</span></p>
+                <p><strong>Velocidade total da rede:</strong> <span id="total-speed">Carregando...</span></p>
+            </div>
+        </section>
+        <section id="ranking">
+            <h2>Ranking</h2>
+            <ul id="ranking-list">Carregando...</ul>
+        </section>
+        <section id="account">
+            <h2>Minha Conta</h2>
+            <form id="account-form">
+                <input type="text" id="public-key" placeholder="Sua chave pública">
+                <button type="submit">Consultar</button>
+            </form>
+            <p><strong>Seu saldo:</strong> <span id="account-balance">-</span></p>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
