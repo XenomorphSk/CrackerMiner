@@ -1,11 +1,11 @@
 CrackerMiner Website 🌐💾
 
-Este é o site oficial da CrackerMiner, onde você pode acessar informações sobre a criptomoeda, como o total de moedas em circulação, o ranking dos mineradores, e consultar seu saldo. O site foi projetado para um visual cyberpunk com um layout responsivo e moderno.
-Recursos
+This is the official website of CrackerMiner, where you can access cryptocurrency information such as the total coins in circulation, the miner rankings, and check your balance. The site is designed with a cyberpunk aesthetic, featuring a responsive and modern layout.
+Features
 
-    Dashboard Global: Exibe informações em tempo real, como:
-        Total de moedas emitidas.
-        Ranking dos mineradores.
-        Estatísticas da rede.
-    Consulta de Saldo: Permite verificar o saldo das carteiras inserindo a chave pública.
-    Estilo Cyberpunk: Inspirado na estética hacker com cores neon, animações dinâmicas e um design imersivo.
+    Global Dashboard: Displays real-time information, including:
+        Total coins issued.
+        Miner rankings.
+        Network statistics.
+    Balance Checker: Allows users to check wallet balances by entering the public key.
+    Cyberpunk Style: Inspired by hacker aesthetics with neon colors, dynamic animations, and an immersive design.
